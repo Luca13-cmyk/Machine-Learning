@@ -22,7 +22,12 @@ class KNN {
             this.sum = Math.sqrt(this.sum);
             return this.sum; // DE Distancia Euclidiana quanto menor, mais proximo esta
         }
+        
 
+    }
+    static normalization(x, max, min) {
+        // x == o que quer normalizar
+        return (x - min) / (max - min);
     }
 
     
@@ -38,14 +43,20 @@ ________________________________________________
     
 */
 // Implementendo teste
-console.log(new KNN([0.8, 0.1, 0.5, 0], [0.6, 0, 0.3, 0]).init()) // 0.3 // Terror
-console.log(new KNN([0.8, 0.1, 0.5, 0], [0.1, 0.2, 0.1, 0.9]).init()) // 1.2 // Comedia
+// console.log(new KNN([0.8, 0.1, 0.5, 0], [0.6, 0, 0.3, 0]).init()) // 0.3 // Terror
+// console.log(new KNN([0.8, 0.1, 0.5, 0], [0.1, 0.2, 0.1, 0.9]).init()) // 1.2 // Comedia
 
 // Sera classificado como Terror
 
 
 // ############
 
+console.log(KNN.normalization(60, 60, 20))
+console.log(KNN.normalization(35, 60, 20))
+console.log(KNN.normalization(20, 60, 20))
+console.log(KNN.normalization(30000,45000, 29500))
+console.log(KNN.normalization(45000,45000, 29500))
+console.log(KNN.normalization(29500,45000, 29500))
 
 // console.log(new KNN([5, 7, 9], [5, 5, 5]).init())
 // console.log(new KNN([1, 1, 1, 3], [2, 2, 1, 2]).init())
